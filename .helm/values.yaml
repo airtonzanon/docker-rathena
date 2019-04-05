@@ -1,0 +1,22 @@
+image: registry.gitlab.werkspot.com/backoffice/integration:master
+registry:
+  token: eyJhdXRocyI6eyJodHRwczovL2luZGV4LmRvY2tlci5pby92MS8iOnsidXNlcm5hbWUiOiJmYWtlIiwicGFzc3dvcmQiOiIxMjM0IiwiYXV0aCI6IlptRnJaVG94TWpNMCJ9fX0=
+rabbitmq:
+  host: localhost
+  port: 5672
+  user: guest
+  password: guest
+  queue_name: set-me-up-before-you-go-go
+  error_queue_name: set-me-up-before-you-go-go
+  connection_timeout: 60
+  heartbeat: 30
+  keepalive: 60
+  write_timeout: 60
+salesforce:
+  key: set-me-up-before-you-go-go
+  secret: set-me-up-before-you-go-go
+  instance: set-me-up-before-you-go-go
+  user: set-me-up-before-you-go-go
+  password: set-me-up-before-you-go-go
+app:
+  env: prod

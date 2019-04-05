@@ -112,7 +112,7 @@ spec:
         version: v1.0
     spec:
       containers:
-      - image: cmilanf/rathena:latest
+      - image: codelicia/rathena:latest
         name: rathena-server
         env:
         - name: MYSQL_PWD
