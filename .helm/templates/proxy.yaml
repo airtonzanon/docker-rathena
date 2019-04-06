@@ -1,0 +1,36 @@
+# https://github.com/kubernetes/contrib/tree/master/for-demos/proxy-to-service
+apiVersion: v1
+kind: Pod
+metadata:
+  name: rathena-proxy
+  labels:
+    app: rathena
+    version: v1.0
+    component: proxy
+spec:
+  hostname: rathena-proxy
+  containers:
+  - name: login-proxy-tcp
+    image: k8s.gcr.io/proxy-to-service:v2
+    args: [ "tcp", "6900", "rathena-server" ]
+    ports:
+    - name: login
+      protocol: TCP
+      containerPort: 6900
+      hostPort: 6900
+  - name: char-proxy-tcp
+    image: k8s.gcr.io/proxy-to-service:v2
+    args: [ "tcp", "6121", "rathena-server" ]
+    ports:
+    - name: char
+      protocol: TCP
+      containerPort: 6121
+      hostPort: 6121
+  - name: map-proxy-tcp
+    image: k8s.gcr.io/proxy-to-service:v2
+    args: [ "tcp", "5121", "rathena-server" ]
+    ports:
+    - name: map
+      protocol: TCP
+      containerPort: 5121
+      hostPort: 5121
