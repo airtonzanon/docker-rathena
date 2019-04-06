@@ -35,25 +35,6 @@ spec:
       containerPort: 5121
       hostPort: 5121
 ---
-# Debug machine
-apiVersion: v1
-kind: Pod
-metadata:
-  name: rathena-debug
-  labels:
-    app: rathena
-    version: v1.0
-    component: debug
-spec:
-  hostname: rathena-debug
-  containers:
-  - name: rathena-debug
-    image: alpine:latest
-    command:
-      - /bin/sh
-      - "-c"
-      - "sleep 60m"
----
 apiVersion: v1
 kind: Service
 metadata:

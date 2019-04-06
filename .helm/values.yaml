@@ -4,3 +4,5 @@ rathena:
 mysql:
   image: mysql:5.7
   root_password: p4ss@w0rd
+debug:
+  image: alpine:latest

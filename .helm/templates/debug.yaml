@@ -1,0 +1,18 @@
+# Debug machine
+apiVersion: v1
+kind: Pod
+metadata:
+  name: rathena-debug
+  labels:
+    app: rathena
+    version: v1.0
+    component: debug
+spec:
+  hostname: rathena-debug
+  containers:
+  - name: rathena-debug
+    image: {{ .Values.debug.image }}
+    command:
+      - /bin/sh
+      - "-c"
+      - "sleep 60m"
