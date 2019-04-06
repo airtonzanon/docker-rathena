@@ -112,7 +112,7 @@ spec:
         version: v1.0
     spec:
       containers:
-      - image: codelicia/rathena:latest
+      - image: {{ .Values.rathena.image }}
         name: rathena-server
         env:
         - name: MYSQL_PWD

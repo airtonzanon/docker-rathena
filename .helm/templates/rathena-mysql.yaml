@@ -80,7 +80,7 @@ spec:
         version: v1.0
     spec:
       containers:
-      - image: mysql:5.7
+      - image: {{ .Values.mysql.image }}
         name: mysql
         env:
         - name: MYSQL_ROOT_PASSWORD
