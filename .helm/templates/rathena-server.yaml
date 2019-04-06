@@ -64,7 +64,7 @@ spec:
         - name: MYSQL_DB
           value: "rathena"
         - name: SET_SERVER_NAME
-          value: "rAthena"
+          value: "rathena-server"
         - name: SET_INTERSRV_USERID
           value: "user1"
         - name: MYSQL_DROP_DB
