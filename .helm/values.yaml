@@ -1,4 +1,6 @@
 rathena:
   image: codelicia/rathena:latest
+  intersrv_password: p4ss@w0rd
 mysql:
   image: mysql:5.7
+  root_password: p4ss@w0rd
