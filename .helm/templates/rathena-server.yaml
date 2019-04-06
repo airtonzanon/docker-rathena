@@ -43,20 +43,19 @@ metadata:
     app: rathena
 spec:
   ports:
-    - name: login
-      protocol: TCP
-      port: 6900
-    - name: map
-      protocol: TCP
-      port: 5121
-    - name: char
-      protocol: TCP
-      port: 6121
+  - name: login
+    protocol: TCP
+    port: 6900
+  - name: map
+    protocol: TCP
+    port: 5121
+  - name: char
+    protocol: TCP
+    port: 6121
   selector:
     app: rathena
     component: server
     version: v1.0
-  clusterIP: 10.96.0.3 # Default range: 10.96.0.0/12
   type: ClusterIP
 ---
 apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2, before 1.8.0 use apps/v1beta1
@@ -96,7 +95,7 @@ spec:
               name: rathena-secret
               key: intersrv-password
         - name: MYSQL_HOST
-          value: "10.96.0.2"
+          value: "rathena-mysql"
         - name: MYSQL_USER
           value: "root"
         - name: MYSQL_DB
